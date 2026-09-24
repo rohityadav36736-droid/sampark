@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driver Dashboard & Vehicles — Sampark Delhi</title>
+  <meta name="description" content="Manage your Sampark Smart Vehicle Tags, emergency SOS contacts, masked call logs, and privacy preferences.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFCC00'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <div class="container">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span class="top-announcement-pill">🟢 Cloud Proxy Active</span>
+        <span>All incoming calls to your vehicle are currently 100% masked and encrypted.</span>
+      </div>
+      <div class="top-announcement-right">
+        <a href="contact.html">Delhi Experience Hub</a>
+        <a href="index.html">Visit Store</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">S</div>
+        <div class="brand-logo-text">
+          <span class="brand-logo-name">SAMPARK<span class="logo-me-badge">DELHI</span></span>
+          <span class="brand-logo-badge">Driver Dashboard</span>
+        </div>
+      </a>
+
+      <!-- Consistent Navigation Menu -->
+            <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop <span class="nav-tag-badge">TAGS</span></a>
+        <a href="shark-tank.html" class="nav-link">Shark Tank</a>
+        <a href="distributorship.html" class="nav-link">Distributorship</a>
+        <a href="contact.html" class="nav-link">Contact & Hub</a>
+        <a href="account.html" class="nav-link active">My Account</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="cart.html" class="cart-icon-btn" aria-label="Shopping Cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-counter">0</span>
+        </a>
+        <button onclick="handleLogout()" class="btn btn-outline btn-sm">Log Out</button>
+        <button class="mobile-toggle" aria-label="Open Mobile Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <div class="brand-logo">
+          <div class="brand-logo-icon">S</div>
+          <div class="brand-logo-text"><span class="brand-logo-name">SAMPARK<span class="logo-me-badge">DELHI</span></span></div>
+        </div>
+        <button class="drawer-close">&times;</button>
+      </div>
+            <nav class="drawer-nav">
+        <a href="index.html" >🏠 Home</a>
+        <a href="shop.html" >🏷️ Shop Smart Tags</a>
+        <a href="shark-tank.html" >🦈 Shark Tank Pitch</a>
+        <a href="distributorship.html" >🤝 Distributorship (B2B)</a>
+        <a href="contact.html" >📍 Contact & Hub</a>
+        <a href="track-order.html" >📦 Track Your Order</a>
+        <a href="account.html" class="active">👤 My Account & Tags</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Dashboard Section -->
+  <section class="account-section">
+    <div class="container">
+      <div class="account-layout-grid">
+
+        <!-- Sidebar Navigation -->
+        <aside class="account-sidebar">
+          <div class="account-user-card">
+            <div class="account-avatar" id="avatar-initial">A</div>
+            <h3 style="font-size:1.15rem; color:var(--dark-900); margin-bottom:2px;" id="user-display-name">Aditya Verma</h3>
+            <p style="font-size:0.8rem; color:#64748B; margin-bottom:8px;" id="user-display-phone">+91 84477 77266</p>
+            <span class="tag-badge-pill tag-badge-active">
+              ✓ Verified Driver (Delhi NCR)
+            </span>
+          </div>
+
+          <div class="account-nav-list">
+            <button class="account-nav-item active" onclick="switchDashboardTab('tags', this)">
+              <span>🏷️</span> My Vehicle Tags (2)
+            </button>
+            <button class="account-nav-item" onclick="switchDashboardTab('emergency', this)">
+              <span>🚨</span> Emergency Contacts
+            </button>
+            <button class="account-nav-item" onclick="switchDashboardTab('logs', this)">
+              <span>📞</span> Call & Scan Logs
+            </button>
+            <button class="account-nav-item" onclick="switchDashboardTab('orders', this)">
+              <span>📦</span> Past Orders
+            </button>
+            <button class="account-nav-item" onclick="switchDashboardTab('privacy', this)">
+              <span>🔒</span> Privacy Controls
+            </button>
+          </div>
+
+          <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--border-light);">
+            <a href="shop.html" class="btn btn-primary btn-block btn-sm">
+              + Order Another Tag
+            </a>
+          </div>
+        </aside>
+
+        <!-- Main Dashboard Card Area -->
+        <div class="account-content-card">
+
+          <!-- TAB 1: REGISTERED VEHICLE TAGS -->
+          <div id="tab-tags" class="dashboard-tab-panel">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:10px;">
+              <div>
+                <h2 style="font-size:1.4rem; color:var(--dark-900);">My Registered Vehicle Tags</h2>
+                <p style="font-size:0.85rem; color:var(--text-muted);">Manage active tags attached to your cars or two-wheelers.</p>
+              </div>
+              <a href="shop.html" class="btn btn-dark btn-sm">+ Add New Tag</a>
+            </div>
+
+            <!-- Tag Card 1 -->
+            <div style="background:#F8FAFC; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:18px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+              <div style="display:flex; align-items:center; gap:14px;">
+                <div style="width:60px; height:60px; background:#FFFFFF; border-radius:var(--radius-md); padding:4px; border:1px solid #E2E8F0; display:flex; align-items:center; justify-content:center;">
+                  <img src="assets/images/product-car.jpg" alt="Tag Thumbnail" style="max-height:100%;">
+                </div>
+                <div>
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    <h3 style="font-size:1.1rem; color:var(--dark-900); font-family:var(--font-heading);" id="tag-1-plate">DL 01 AB 1234</h3>
+                    <span class="tag-badge-pill tag-badge-active">Active</span>
+                  </div>
+                  <p style="font-size:0.8rem; color:#64748B; margin:2px 0 4px 0;">Hyundai Creta SX (White) • Windshield Tag</p>
+                  <div style="font-size:0.75rem; color:#1E293B;">
+                    Masked Routing Proxy: <strong style="color:#2563EB;">+91 11-4084-XXXX</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div style="text-align:right;">
+                <div style="font-size:0.8rem; color:#64748B; margin-bottom:6px;">Total Scans: <strong>14</strong></div>
+                <div style="display:flex; gap:6px;">
+                  <button onclick="testMaskedCall('DL 01 AB 1234')" class="btn btn-outline btn-sm">🔔 Test Call</button>
+                  <button onclick="editTagMock('DL 01 AB 1234')" class="btn btn-dark btn-sm">⚙️ Configure</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tag Card 2 -->
+            <div style="background:#F8FAFC; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:18px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+              <div style="display:flex; align-items:center; gap:14px;">
+                <div style="width:60px; height:60px; background:#FFFFFF; border-radius:var(--radius-md); padding:4px; border:1px solid #E2E8F0; display:flex; align-items:center; justify-content:center;">
+                  <img src="assets/images/product-bike.jpg" alt="Tag Thumbnail" style="max-height:100%;">
+                </div>
+                <div>
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    <h3 style="font-size:1.1rem; color:var(--dark-900); font-family:var(--font-heading);">HR 26 DQ 5678</h3>
+                    <span class="tag-badge-pill tag-badge-active">Active</span>
+                  </div>
+                  <p style="font-size:0.8rem; color:#64748B; margin:2px 0 4px 0;">Royal Enfield Meteor 350 • Helmet & Bike Tag</p>
+                  <div style="font-size:0.75rem; color:#1E293B;">
+                    Crash SOS Trigger: <strong style="color:#10B981;">ENABLED</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div style="text-align:right;">
+                <div style="font-size:0.8rem; color:#64748B; margin-bottom:6px;">Total Scans: <strong>3</strong></div>
+                <div style="display:flex; gap:6px;">
+                  <button onclick="testMaskedCall('HR 26 DQ 5678')" class="btn btn-outline btn-sm">🔔 Test Call</button>
+                  <button onclick="editTagMock('HR 26 DQ 5678')" class="btn btn-dark btn-sm">⚙️ Configure</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: EMERGENCY SOS CONTACTS -->
+          <div id="tab-emergency" class="dashboard-tab-panel" style="display:none;">
+            <h2 style="font-size:1.4rem; color:var(--dark-900); margin-bottom:4px;">Emergency SOS Broadcast Contacts</h2>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px;">
+              When your tag is scanned during roadside emergencies or towing, these contacts will receive instant SMS & WhatsApp alerts.
+            </p>
+
+            <form onsubmit="handleSaveEmergency(event)" style="background:#F8FAFC; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:20px;">
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label>Emergency Contact 1 (Spouse / Parent)</label>
+                  <input type="text" class="form-control" value="Sunita Verma (Wife)" required>
+                </div>
+                <div class="form-group">
+                  <label>Mobile Number 1</label>
+                  <input type="tel" class="form-control" value="+91 98111 22334" required>
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label>Emergency Contact 2 (Sibling / Friend)</label>
+                  <input type="text" class="form-control" value="Vikram Verma (Brother)">
+                </div>
+                <div class="form-group">
+                  <label>Mobile Number 2</label>
+                  <input type="tel" class="form-control" value="+91 98222 33445">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-sm">Save Emergency Contacts</button>
+            </form>
+          </div>
+
+          <!-- TAB 3: CALL & SCAN LOGS -->
+          <div id="tab-logs" class="dashboard-tab-panel" style="display:none;">
+            <h2 style="font-size:1.4rem; color:var(--dark-900); margin-bottom:4px;">Live Call & Parking Scan History</h2>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px;">Audit trail of every scan made on your vehicle tags across Delhi NCR.</p>
+
+            <div style="border:1px solid var(--border-light); border-radius:var(--radius-md); overflow-x:auto;">
+              <table style="width:100%; min-width:540px; border-collapse:collapse; text-align:left; font-size:0.82rem;">
+                <thead style="background:#F1F5F9; color:#475569;">
+                  <tr>
+                    <th style="padding:12px;">Timestamp</th>
+                    <th style="padding:12px;">Vehicle</th>
+                    <th style="padding:12px;">Reason</th>
+                    <th style="padding:12px;">Call Routing</th>
+                    <th style="padding:12px;">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom:1px solid #E2E8F0;">
+                    <td style="padding:12px; font-weight:600;">Today, 11:20 AM</td>
+                    <td style="padding:12px; font-weight:700; color:#D97706;">DL 01 AB 1234</td>
+                    <td style="padding:12px;">Car Double Parked</td>
+                    <td style="padding:12px; color:#2563EB;">Masked (1m 12s)</td>
+                    <td style="padding:12px;"><span class="tag-badge-pill tag-badge-active">Answered</span></td>
+                  </tr>
+                  <tr style="border-bottom:1px solid #E2E8F0;">
+                    <td style="padding:12px; font-weight:600;">22 Sep, 04:45 PM</td>
+                    <td style="padding:12px; font-weight:700; color:#D97706;">DL 01 AB 1234</td>
+                    <td style="padding:12px;">Headlights Left On</td>
+                    <td style="padding:12px; color:#2563EB;">WhatsApp Alert</td>
+                    <td style="padding:12px;"><span class="tag-badge-pill tag-badge-active">Delivered</span></td>
+                  </tr>
+                  <tr>
+                    <td style="padding:12px; font-weight:600;">18 Sep, 02:10 PM</td>
+                    <td style="padding:12px; font-weight:700; color:#D97706;">HR 26 DQ 5678</td>
+                    <td style="padding:12px;">General Inquiry</td>
+                    <td style="padding:12px; color:#2563EB;">Masked (42s)</td>
+                    <td style="padding:12px;"><span class="tag-badge-pill tag-badge-active">Answered</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- TAB 4: PAST ORDERS -->
+          <div id="tab-orders" class="dashboard-tab-panel" style="display:none;">
+            <h2 style="font-size:1.4rem; color:var(--dark-900); margin-bottom:4px;">Your Tag Orders</h2>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px;">Track shipments and download tax invoices.</p>
+
+            <div style="background:#F8FAFC; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+              <div>
+                <span class="tag-badge-pill tag-badge-active">Delivered</span>
+                <h4 style="font-size:1rem; color:var(--dark-900); margin:3px 0;">Order #SMP-519284</h4>
+                <p style="font-size:0.8rem; color:#64748B; margin-bottom:0;">1 × Sampark Smart Car Tag (DL 01 AB 1234) • Total: ₹199</p>
+              </div>
+              <div style="display:flex; gap:8px;">
+                <a href="track-order.html?orderId=SMP-519284" class="btn btn-outline btn-sm">Track Again</a>
+                <button onclick="window.SamparkApp.showToastMessage('Invoice downloading...')" class="btn btn-dark btn-sm">PDF Invoice</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 5: PRIVACY CONTROLS -->
+          <div id="tab-privacy" class="dashboard-tab-panel" style="display:none;">
+            <h2 style="font-size:1.4rem; color:var(--dark-900); margin-bottom:4px;">Driver Privacy & Do Not Disturb Controls</h2>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:20px;">Configure how callers reach you and protect your personal hours.</p>
+
+            <div style="display:flex; flex-direction:column; gap:14px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; padding:14px; background:#F8FAFC; border-radius:var(--radius-md); border:1px solid var(--border-light);">
+                <div>
+                  <strong style="color:var(--dark-900); font-size:0.88rem;">100% Masked Audio Calling</strong>
+                  <div style="font-size:0.78rem; color:#64748B;">Route calls through Sampark Delhi virtual proxy number.</div>
+                </div>
+                <input type="checkbox" checked style="width:18px; height:18px; accent-color:var(--primary);">
+              </div>
+
+              <div style="display:flex; justify-content:space-between; align-items:center; padding:14px; background:#F8FAFC; border-radius:var(--radius-md); border:1px solid var(--border-light);">
+                <div>
+                  <strong style="color:var(--dark-900); font-size:0.88rem;">Instant WhatsApp Push Notifications</strong>
+                  <div style="font-size:0.78rem; color:#64748B;">Send WhatsApp text with parking location when tag is scanned.</div>
+                </div>
+                <input type="checkbox" checked style="width:18px; height:18px; accent-color:var(--primary);">
+              </div>
+
+              <div style="display:flex; justify-content:space-between; align-items:center; padding:14px; background:#F8FAFC; border-radius:var(--radius-md); border:1px solid var(--border-light);">
+                <div>
+                  <strong style="color:var(--dark-900); font-size:0.88rem;">Night Mode DND (11:00 PM – 06:00 AM)</strong>
+                  <div style="font-size:0.78rem; color:#64748B;">Only allow Emergency SOS triggers during late night hours.</div>
+                </div>
+                <input type="checkbox" checked style="width:18px; height:18px; accent-color:var(--primary);">
+              </div>
+            </div>
+
+            <button onclick="window.SamparkApp.showToastMessage('Privacy preferences updated successfully!')" class="btn btn-primary btn-sm" style="margin-top:16px;">
+              Save Privacy Preferences
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 12px;">
+            <div class="brand-logo-icon">S</div>
+            <div class="brand-logo-text"><span class="brand-logo-name" style="color: #FFF;">SAMPARK<span style="color:var(--primary);">ME</span></span></div>
+          </a>
+          <p>Secure driver dashboard and cloud telephony management portal.</p>
+          <div class="footer-social-links" style="margin-top:14px;">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-btn youtube" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://wa.me/918447777266" target="_blank" rel="noopener" class="social-btn whatsapp" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.275-.1-.475-.15-.675.15-.199.3-.774.98-.949 1.18-.175.2-.349.225-.65.075-.301-.15-1.272-.469-2.423-1.496-.895-.798-1.5-1.784-1.675-2.084-.175-.3-.019-.462.131-.611.136-.134.301-.35.451-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.628-.925-2.228-.243-.585-.49-.505-.675-.515-.175-.01-.375-.01-.575-.01s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.899 1.225 3.1c.15.2 2.115 3.23 5.124 4.53.716.31 1.275.495 1.71.634.719.229 1.373.197 1.89.12.576-.086 1.78-.727 2.03-1.428.25-.7.25-1.302.175-1.428-.075-.126-.275-.201-.576-.351zM12.04 2C6.516 2 2.028 6.488 2.028 12.012c0 1.954.56 3.784 1.536 5.334L2 22l4.81-1.523c1.488.887 3.226 1.385 5.23 1.385 5.524 0 10.012-4.488 10.012-10.012S17.564 2 12.04 2z"/></svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="social-btn twitter" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn facebook" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <div class="footer-links-list">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Buy Tags</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="track-order.html">Track Order</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Helpline</h4>
+          <div class="footer-links-list">
+            <a href="tel:+918447777266">+91 84477 77266</a>
+            <a href="mailto:samparkme.delhi@gmail.com">samparkme.delhi@gmail.com</a>
+            <a href="contact.html">Saket Hub, New Delhi</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Guarantees</h4>
+          <div class="footer-links-list">
+            <span>🛡️ 100% Number Masking</span>
+            <span>⚡ Express 24-48hr Delivery</span>
+            <span>💳 Safe UPI & Card Payments</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>© 2026 Sampark Delhi Technologies Pvt Ltd. All Rights Reserved. Encrypted driver portal.</div>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Fixed Floating Chat on WhatsApp Widget -->
+  <a href="https://wa.me/918447777266?text=Hello%20Sampark%20Delhi%2C%20I%20need%20help%20with%20my%20order"
+     target="_blank" rel="noopener noreferrer" class="floating-whatsapp" id="floating-whatsapp-btn" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.516 2 2.028 6.488 2.028 12.012c0 1.954.56 3.784 1.536 5.334L2 22l4.81-1.523c1.488.887 3.226 1.385 5.23 1.385 5.524 0 10.012-4.488 10.012-10.012S17.564 2 12.04 2zm5.432 12.382c-.301-.15-1.78-.879-2.056-.98-.275-.1-.475-.15-.675.15-.199.3-.774.98-.949 1.18-.175.2-.349.225-.65.075-.301-.15-1.272-.469-2.423-1.496-.895-.798-1.5-1.784-1.675-2.084-.175-.3-.019-.462.131-.611.136-.134.301-.35.451-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.628-.925-2.228-.243-.585-.49-.505-.675-.515-.175-.01-.375-.01-.575-.01s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.899 1.225 3.1c.15.2 2.115 3.23 5.124 4.53.716.31 1.275.495 1.71.634.719.229 1.373.197 1.89.12.576-.086 1.78-.727 2.03-1.428.25-.7.25-1.302.175-1.428-.075-.126-.275-.201-.576-.351z"/></svg>
+    <span class="whatsapp-text">Chat on WhatsApp</span>
+    <span class="whatsapp-pulse"></span>
+  </a>
+
+  <div class="toast-container"></div>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    function switchDashboardTab(tabId, btn) {
+      document.querySelectorAll('.dashboard-tab-panel').forEach(p => p.style.display = 'none');
+      document.querySelectorAll('.account-nav-item').forEach(b => b.classList.remove('active'));
+
+      const target = document.getElementById(`tab-${tabId}`);
+      if (target) target.style.display = 'block';
+      if (btn) btn.classList.add('active');
+    }
+
+    function testMaskedCall(plate) {
+      window.SamparkApp.showToastMessage(`📞 Initiating test masked proxy call for ${plate}...`);
+    }
+
+    function editTagMock(plate) {
+      window.SamparkApp.showToastMessage(`⚙️ Opened settings for ${plate}`);
+    }
+
+    function handleSaveEmergency(e) {
+      e.preventDefault();
+      window.SamparkApp.showToastMessage('Emergency SOS contacts updated!');
+    }
+
+    function handleLogout() {
+      localStorage.removeItem('sampark_user');
+      window.SamparkApp.showToastMessage('Logged out successfully. Redirecting to Login...');
+      setTimeout(() => window.location.href = 'login.html', 800);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = JSON.parse(localStorage.getItem('sampark_user') || 'null');
+      if (user) {
+        if (user.name) {
+          document.getElementById('user-display-name').textContent = user.name;
+          document.getElementById('avatar-initial').textContent = user.name.charAt(0).toUpperCase();
+        }
+        if (user.phone) {
+          document.getElementById('user-display-phone').textContent = user.phone;
+        }
+        if (user.vehicle) {
+          const p = document.getElementById('tag-1-plate');
+          if (p) p.textContent = user.vehicle;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
