@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFCC00'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>">
 </head>
-<body>
+<body class="has-sticky-buy-bar">
 
   <!-- Top Announcement Bar -->
     <!-- Top Announcement Bar -->
@@ -212,7 +212,7 @@
             <button type="button" class="btn-product-cart" id="add-to-cart-page-btn">
               🛒 Add To Cart
             </button>
-            <button type="button" class="btn-product-buy" id="buy-now-page-btn">
+            <button type="button" class="btn-product-buy" id="buy-now-page-btn" onclick="executeSingleProductBuyNow(event)">
               ⚡ Buy Now
             </button>
           </div>
@@ -1075,7 +1075,7 @@
       <div class="price-val" id="mobile-buy-bar-price">₹199</div>
       <div class="price-sub">Cash on Delivery</div>
     </div>
-    <button class="buy-bar-btn" id="mobile-sticky-buy-btn" type="button">
+    <button class="buy-bar-btn" id="mobile-sticky-buy-btn" onclick="executeSingleProductBuyNow(event)" type="button">
       BUY NOW
     </button>
   </div>
@@ -1187,22 +1187,46 @@
       }, singleQty, true);
     });
 
-    document.getElementById('buy-now-page-btn').addEventListener('click', () => {
-      const vPlate = document.getElementById('vehicle-plate-input').value.trim().toUpperCase() || 'STANDARD TAG';
-      window.SamparkApp.addToCart({
-        ...currentProd,
-        vehicleNumber: vPlate
-      }, singleQty, false);
+    // Universal Robust Buy Now Function (Desktop + Mobile)
+    function executeSingleProductBuyNow(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      const vPlateInput = document.getElementById('vehicle-plate-input');
+      const vPlate = (vPlateInput && vPlateInput.value.trim().toUpperCase()) || 'STANDARD TAG';
+      const qtyEl = document.getElementById('prod-qty-val');
+      const qty = qtyEl ? (parseInt(qtyEl.textContent) || 1) : 1;
+
+      if (window.SamparkApp && window.SamparkApp.addToCart) {
+        window.SamparkApp.addToCart({
+          ...currentProd,
+          vehicleNumber: vPlate
+        }, qty, false);
+      } else {
+        try {
+          const cart = JSON.parse(localStorage.getItem('sampark_cart') || '[]');
+          const idx = cart.findIndex(i => i.id === currentProd.id);
+          if (idx > -1) {
+            cart[idx].quantity += qty;
+          } else {
+            cart.push({
+              ...currentProd,
+              vehicleNumber: vPlate,
+              quantity: qty
+            });
+          }
+          localStorage.setItem('sampark_cart', JSON.stringify(cart));
+        } catch(err) {
+          console.error('Cart fallback error', err);
+        }
+      }
       window.location.href = 'checkout.html';
-    });
+    }
+    window.executeSingleProductBuyNow = executeSingleProductBuyNow;
+
+    const desktopBuyBtn = document.getElementById('buy-now-page-btn');
+    if (desktopBuyBtn) desktopBuyBtn.addEventListener('click', executeSingleProductBuyNow);
 
     const mobileStickyBtn = document.getElementById('mobile-sticky-buy-btn');
-    if (mobileStickyBtn) {
-      mobileStickyBtn.addEventListener('click', () => {
-        const buyNowBtn = document.getElementById('buy-now-page-btn');
-        if (buyNowBtn) buyNowBtn.click();
-      });
-    }
+    if (mobileStickyBtn) mobileStickyBtn.addEventListener('click', executeSingleProductBuyNow);
 
     function switchInfoTab(tabId, btn) {
       document.querySelectorAll('.info-tab-btn').forEach(b => b.classList.remove('active'));
@@ -1302,7 +1326,7 @@
       <div class="price-val" id="mobile-buy-bar-price">₹199</div>
       <div class="price-sub">Cash on Delivery</div>
     </div>
-    <button class="buy-bar-btn" id="mobile-sticky-buy-btn">
+    <button class="buy-bar-btn" id="mobile-sticky-buy-btn" onclick="executeSingleProductBuyNow(event)">
       BUY NOW
     </button>
   </div>

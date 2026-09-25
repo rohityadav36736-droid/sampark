@@ -1347,7 +1347,8 @@ footer .brand-logo-name .logo-me-badge,
   gap: 24px;
   margin-top: 40px;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
+  padding: 10px 0 16px 0;
 }
 
 .marquee-row {
@@ -1356,6 +1357,8 @@ footer .brand-logo-name .logo-me-badge,
   user-select: none;
   position: relative;
   width: 100%;
+  padding: 18px 0 24px 0;
+  margin: -10px 0 -10px 0;
 }
 
 .marquee-track {
@@ -1411,14 +1414,18 @@ footer .brand-logo-name .logo-me-badge,
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
-  transition: all 0.25s ease;
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+  position: relative;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .marquee-card:hover {
   background: #FFFFFF;
   border-color: #FFCC00;
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px -6px rgba(0, 0, 0, 0.14);
+  z-index: 10;
 }
 
 .marquee-stars {
@@ -3504,6 +3511,8 @@ footer .brand-logo-name .logo-me-badge,
   display: flex;
   overflow: hidden;
   width: 100%;
+  padding: 14px 0 18px 0;
+  margin: -8px 0 -8px 0;
 }
 
 .feature-marquee-track {
@@ -3530,13 +3539,17 @@ footer .brand-logo-name .logo-me-badge,
   min-width: 320px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   flex-shrink: 0;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .feature-marquee-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   border-color: #FFCC00;
-  box-shadow: 0 6px 18px rgba(255, 204, 0, 0.2);
+  box-shadow: 0 8px 22px rgba(255, 204, 0, 0.22);
+  z-index: 10;
 }
 
 .feature-card-icon {
@@ -6245,5 +6258,30 @@ footer .brand-logo-name .logo-me-badge,
   .product-bottom-details-grid {
     margin-top: 32px !important;
     margin-bottom: 36px !important;
+  }
+}
+
+
+/* Lift WhatsApp float button on pages with bottom sticky buy bar */
+@media (max-width: 768px) {
+  .has-sticky-buy-bar .floating-whatsapp,
+  .has-sticky-buy-bar .fixed-whatsapp-btn,
+  body:has(.mobile-sticky-buy-bar) .floating-whatsapp,
+  body:has(.mobile-sticky-buy-bar) .fixed-whatsapp-btn {
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px)) !important;
+    right: 16px !important;
+    z-index: 10000 !important;
+  }
+
+  .mobile-sticky-buy-bar {
+    z-index: 9999 !important;
+  }
+
+  .mobile-sticky-buy-bar .buy-bar-btn {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 10001 !important;
+    -webkit-tap-highlight-color: rgba(255, 204, 0, 0.4) !important;
   }
 }
