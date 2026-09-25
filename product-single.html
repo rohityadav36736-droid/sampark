@@ -11,11 +11,12 @@
 <body>
 
   <!-- Top Announcement Bar -->
+    <!-- Top Announcement Bar -->
   <div class="top-announcement">
     <div class="container">
       <div style="display:flex; align-items:center; gap:10px;">
         <span class="top-announcement-pill">🌟 Shark Tank Featured</span>
-        <span>Free Express Delivery Across Delhi NCR on Orders Above ₹199</span>
+        <span>Over 50,000+ Vehicles Protected Across Delhi NCR, Noida & Gurugram</span>
       </div>
       <div class="top-announcement-right">
         <a href="track-order.html">Track Order</a>
@@ -24,10 +25,10 @@
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Main Sticky Header (Calibrated for Perfect Mobile Display) -->
   <header class="site-header">
     <div class="container header-container">
-      <a href="index.html" class="brand-logo">
+      <a href="index.html" class="brand-logo" id="header-brand-logo">
         <div class="brand-logo-icon">S</div>
         <div class="brand-logo-text">
           <span class="brand-logo-name">SAMPARK<span class="logo-me-badge">DELHI</span></span>
@@ -35,54 +36,68 @@
         </div>
       </a>
 
-      <!-- Consistent Navigation Menu -->
-            <!-- Desktop Navigation Menu -->
+      <!-- Desktop Navigation Menu -->
       <nav class="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html" class="nav-link ">Home</a>
         <a href="shop.html" class="nav-link active">Shop <span class="nav-tag-badge">TAGS</span></a>
-        <a href="shark-tank.html" class="nav-link">Shark Tank</a>
-        <a href="distributorship.html" class="nav-link">Distributorship</a>
-        <a href="contact.html" class="nav-link">Contact & Hub</a>
-        <a href="account.html" class="nav-link">My Account</a>
+        <a href="shark-tank.html" class="nav-link ">Shark Tank</a>
+        <a href="distributorship.html" class="nav-link ">Distributorship</a>
+        <a href="contact.html" class="nav-link ">Contact & Hub</a>
+        <a href="account.html" class="nav-link ">My Account</a>
       </nav>
 
+      <!-- Action Buttons -->
       <div class="header-actions">
         <a href="cart.html" class="cart-icon-btn" aria-label="Shopping Cart">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-            <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
           </svg>
           <span class="cart-counter">0</span>
         </a>
-        <a href="cart.html" class="header-cta-btn">View Cart</a>
-        <button class="mobile-toggle" aria-label="Open Mobile Menu">
-          <span></span><span></span><span></span>
+
+        <a href="shop.html" class="header-cta-btn" id="header-cta-buy">
+          <span>Buy ₹199</span>
+        </a>
+
+        <!-- Mobile Toggle Hamburger -->
+        <button class="mobile-toggle" aria-label="Open Mobile Menu" id="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
-  <div class="mobile-drawer">
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-drawer" id="mobile-drawer">
     <div class="drawer-content">
       <div class="drawer-header">
         <div class="brand-logo">
           <div class="brand-logo-icon">S</div>
-          <div class="brand-logo-text"><span class="brand-logo-name">SAMPARK<span class="logo-me-badge">DELHI</span></span></div>
+          <div class="brand-logo-text">
+            <span class="brand-logo-name">SAMPARK<span class="logo-me-badge">DELHI</span></span>
+            <span class="brand-logo-badge">Smart Auto Privacy</span>
+          </div>
         </div>
         <button class="drawer-close">&times;</button>
       </div>
-            <nav class="drawer-nav">
-        <a href="index.html" >🏠 Home</a>
+
+      <nav class="drawer-nav">
+        <a href="index.html" class="">🏠 Home</a>
         <a href="shop.html" class="active">🏷️ Shop Smart Tags</a>
-        <a href="shark-tank.html" >🦈 Shark Tank Pitch</a>
-        <a href="distributorship.html" >🤝 Distributorship (B2B)</a>
-        <a href="contact.html" >📍 Contact & Hub</a>
-        <a href="track-order.html" >📦 Track Your Order</a>
-        <a href="account.html" >👤 My Account & Tags</a>
+        <a href="shark-tank.html" class="">🦈 Shark Tank Pitch</a>
+        <a href="distributorship.html" class="">🤝 Distributorship (B2B)</a>
+        <a href="contact.html" class="">📍 Contact & Hub</a>
+        <a href="track-order.html" class="">📦 Track Your Order</a>
+        <a href="account.html" class="">👤 My Account & Tags</a>
       </nav>
-      <div style="margin-top:auto;">
+
+      <div style="margin-top:auto; display:flex; flex-direction:column; gap:8px;">
         <a href="shop.html" class="btn btn-primary btn-block">Order Your Tag Now</a>
+        <a href="login.html" class="btn btn-outline btn-block">Driver Login / Signup</a>
       </div>
     </div>
   </div>
@@ -148,67 +163,840 @@
             <span class="price-save">60% OFF Today</span>
           </div>
 
+          <!-- Feature Tag from Image 2 -->
+          <div style="display:flex; align-items:center; gap:8px; margin: 10px 0 16px 0; font-size:0.86rem; font-weight:700; color:#1E293B;">
+            <span style="color:#FFCC00; font-size:1.15rem; line-height:1;">●</span>
+            <span>One time purchase, COD Available</span>
+          </div>
+
           <!-- Vehicle Plate Linking Preview Card -->
-          <div class="vehicle-input-preview-card">
-            <label for="vehicle-plate-input">
-              🚗 Link Vehicle Registration (Optional, or activate after delivery):
+          <div class="product-config-card">
+            <label for="vehicle-plate-input" class="config-label">
+              🚗 Link Vehicle Registration <span class="config-optional">(Optional — can activate later)</span>
             </label>
-            <input type="text" id="vehicle-plate-input" class="vehicle-plate-input" placeholder="e.g. DL 01 AB 1234" maxlength="15">
-            <small style="color:#64748B; display:block; margin-top:4px; font-size:0.75rem;">
+            <div class="config-input-wrapper">
+              <input type="text" id="vehicle-plate-input" class="config-plate-input" placeholder="e.g. DL 01 AB 1234" maxlength="15">
+            </div>
+            <small class="config-hint">
               💡 Pre-linked to your vehicle in our secure cloud so it works right out of the box!
             </small>
           </div>
 
-          <!-- Pincode Checker -->
-          <div style="background:#FFFFFF; border:1px solid var(--border-light); border-radius:var(--radius-md); padding:14px; margin: 16px 0;">
-            <strong style="font-size:0.84rem; color:var(--dark-900);">Check Delivery Speed in Your City:</strong>
-            <div class="pincode-checker-box" style="margin-top:8px; margin-bottom:4px;">
-              <input type="text" id="pincode-input" placeholder="6-digit Pincode (e.g. 110001)" maxlength="6">
-              <button class="btn btn-dark btn-sm" id="check-pincode-btn">Check</button>
+          <!-- Pincode Checker Card -->
+          <div class="product-pincode-card">
+            <div class="pincode-card-header">
+              <span class="pincode-icon">📍</span>
+              <strong>Check Delivery Speed in Your City:</strong>
             </div>
-            <div id="pincode-result"></div>
+            <div class="pincode-input-row">
+              <input type="text" id="pincode-input" class="pincode-text-input" placeholder="Enter 6-digit Pincode" maxlength="6">
+              <button type="button" class="pincode-check-btn" id="check-pincode-btn">Check</button>
+            </div>
+            <div id="pincode-result" class="pincode-result-msg"></div>
           </div>
 
-          <!-- Quantity & Action Buttons -->
-          <div style="display:flex; align-items:center; gap:14px; margin-bottom: 20px;">
-            <div class="qty-stepper">
-              <button class="qty-btn" id="prod-qty-minus">-</button>
-              <span class="qty-val" id="prod-qty-val">1</span>
-              <button class="qty-btn" id="prod-qty-plus">+</button>
+          <!-- Quantity Stepper & Stock Status Row -->
+          <div class="product-quantity-row">
+            <div class="product-stepper-box">
+              <button type="button" class="stepper-btn" id="prod-qty-minus">−</button>
+              <span class="stepper-count" id="prod-qty-val">1</span>
+              <button type="button" class="stepper-btn" id="prod-qty-plus">+</button>
             </div>
-            <span style="font-size:0.82rem; color:#10B981; font-weight:700;">✓ In Stock — Ready to Dispatch</span>
+            <div class="product-stock-badge">
+              <span class="stock-dot"></span> In Stock — Ready to Dispatch
+            </div>
           </div>
 
-          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom: 24px;">
-            <button class="btn btn-outline btn-lg" id="add-to-cart-page-btn">
+          <!-- Primary Action Buttons (Pill & High Contrast) -->
+          <div class="product-main-actions-grid">
+            <button type="button" class="btn-product-cart" id="add-to-cart-page-btn">
               🛒 Add To Cart
             </button>
-            <button class="btn btn-primary btn-lg" id="buy-now-page-btn">
+            <button type="button" class="btn-product-buy" id="buy-now-page-btn">
               ⚡ Buy Now
             </button>
           </div>
 
-          <!-- Guarantee Highlights -->
-          <div style="border-top:1px solid var(--border-light); padding-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-            <div style="font-size:0.8rem; color:#475569; font-weight:600;">
-              🛡️ 100% Privacy Calling Proxy
+          <!-- Guarantee Highlights Grid -->
+          <div class="product-trust-badges-grid">
+            <div class="trust-badge-item">
+              <span class="trust-badge-icon">🛡️</span>
+              <span>100% Privacy Calling Proxy</span>
             </div>
-            <div style="font-size:0.8rem; color:#475569; font-weight:600;">
-              🌦️ All-Weather Heat & Rainproof
+            <div class="trust-badge-item">
+              <span class="trust-badge-icon">🌦️</span>
+              <span>All-Weather Heat & Rainproof</span>
             </div>
-            <div style="font-size:0.8rem; color:#475569; font-weight:600;">
-              📱 Zero App Needed for Scanners
+            <div class="trust-badge-item">
+              <span class="trust-badge-icon">📱</span>
+              <span>Zero App Needed for Scanners</span>
             </div>
-            <div style="font-size:0.8rem; color:#475569; font-weight:600;">
-              ♾️ Lifetime Cloud Connectivity
+            <div class="trust-badge-item">
+              <span class="trust-badge-icon">♾️</span>
+              <span>Lifetime Cloud Connectivity</span>
+            </div>
+          </div>
+
+          </div>
+
+      </div>
+
+      <!-- Bottom Full-Width 2-Column Section (Desktop Side-by-Side, Mobile Stack) -->
+      <div class="product-bottom-details-grid">
+          <!-- 9 Feature Icons Grid Card Matching Image 1 -->
+          <div class="product-features-grid-card">
+            <div class="feature-grid-item">
+              <div class="feature-grid-icon icon-blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="feature-grid-label">Masked Audio Calls</div>
+            </div>
+
+            <div class="feature-grid-item">
+              <div class="feature-grid-icon icon-green">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#25D366">
+                  <path d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.275-.1-.475-.15-.675.15-.199.3-.774.98-.949 1.18-.175.2-.349.225-.65.075-.301-.15-1.272-.469-2.423-1.496-.895-.798-1.5-1.784-1.675-2.084-.175-.3-.019-.462.131-.611.136-.134.301-.35.451-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.628-.925-2.228-.243-.585-.49-.505-.675-.515-.175-.01-.375-.01-.575-.01s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.899 1.225 3.1c.15.2 2.115 3.23 5.124 4.53.716.31 1.275.495 1.71.634.719.229 1.373.197 1.89.12.576-.086 1.78-.727 2.03-1.428.25-.7.25-1.302.175-1.428-.075-.126-.275-.201-.576-.351zM12.04 2C6.516 2 2.028 6.488 2.028 12.012c0 1.954.56 3.784 1.536 5.334L2 22l4.81-1.523c1.488.887 3.226 1.385 5.23 1.385 5.524 0 10.012-4.488 10.012-10.012S17.564 2 12.04 2z"/>
+                </svg>
+              </div>
+              <div class="feature-grid-label">WhatsApp Notifications</div>
+            </div>
+
+            <div class="feature-grid-item">
+              <div class="feature-grid-icon icon-red">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="2" width="18" height="20" rx="3" fill="#E11D48"/>
+                  <text x="12" y="15" fill="#FFFFFF" font-size="7.5" font-weight="900" text-anchor="middle" font-family="sans-serif">PDF</text>
+                </svg>
+              </div>
+              <div class="feature-grid-label">PDF Tag (Offline)</div>
+            </div>
+
+            <div class="feature-grid-item">
+              <div class="feature-grid-icon icon-purple">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#9333EA">
+                  <path d="M17 10.5V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3.5l4 4v-11l-4 4z"></path>
+                </svg>
+              </div>
+              <div class="feature-grid-label">Masked Video Calls</div>
+            </div>
+
+            <div class="feature-grid-item">
+              <div class="feature-grid-icon icon-teal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  <polyline points="14 4 10 8 14 12"></polyline>
+                  <path d="M20 10A6 6 0 0 0 10 8"></path>
+                </svg>
+              </div>
+              <div class="feature-grid-label">Call Back Caller</div>
+            </div>
+
+            <div class="feature-grid-item">
+              <div class="feature-grid-icon icon-green2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#16A34A">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"></path>
+                </svg>
+              </div>
+              <div class="feature-grid-label">Check Location</div>
+            </div>
+
+            <div class="feature-grid-item">
+              <div class="feature-grid-icon icon-orange">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#EA580C">
+                  <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 11H7V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z"/>
+                </svg>
+              </div>
+              <div class="feature-grid-label">Offline SMS Available</div>
+            </div>
+
+            <div class="feature-grid-item">
+              <div class="feature-grid-icon icon-red2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E11D48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                </svg>
+              </div>
+              <div class="feature-grid-label">Live Support Always</div>
+            </div>
+
+            <div class="feature-grid-item">
+              <div class="feature-grid-icon icon-orange2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#CA8A04">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+              </div>
+              <div class="feature-grid-label">Emergency Alerts</div>
+            </div>
+          </div>
+          <!-- Specifications Card Matching Image 1 -->
+          <div class="product-specs-card">
+            <h3>Specifications</h3>
+            <div class="specs-table">
+              <div class="specs-row">
+                <span class="specs-label">Material</span>
+                <span class="specs-value">Premium Waterproof PVC</span>
+              </div>
+              <div class="specs-row">
+                <span class="specs-label">Size</span>
+                <span class="specs-value">Standard (fits all vehicles)</span>
+              </div>
+              <div class="specs-row">
+                <span class="specs-label">Warranty</span>
+                <span class="specs-value">1 Year Replacement</span>
+              </div>
+            </div>
+
+            <div class="specs-highlight-bullet">
+              <span style="color:#FFCC00; font-size:1.1rem; line-height:1;">●</span>
+              <span>Get updates about your parked vehicle on your phone, WhatsApp and Masked call. Buy the One Time Pack Now.</span>
+            </div>
+
+            <div class="specs-checklist">
+              <div class="checklist-item">☑️ Masked Audio and Video Call</div>
+              <div class="checklist-item">☑️ SMS And WhatsApp</div>
+              <div class="checklist-item">☑️ Manage your tag from the APP</div>
+              <div class="checklist-item">☑️ One time purchase, COD Available</div>
+            </div>
+
+            <div class="specs-community-note">
+              <p>They Cant see your phone number ⭐</p>
+              <p>The Tag will help you keep your vehicle out of danger while its in parking.</p>
+              <p>Anyone getting bothered will be able to contact you easily.</p>
+              <p>Join our 1M User Community,</p>
+              <p><strong>Lets Make India Great !</strong></p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Detailed Product Information Tabs / Section -->
+  <section class="product-info-details-section">
+    <div class="container">
+      <div class="section-header" style="max-width: 100% !important; margin: 0 0 24px 0 !important; text-align: left !important;">
+        <div class="section-tag">Complete Details</div>
+        <h2>Product Information & Privacy Architecture</h2>
+        <p>Everything you need to know about the hardware, laser encoding, and telecom relay setup.</p>
+      </div>
+
+      <div class="product-info-tabs-wrapper">
+        <div class="info-tabs-nav">
+          <button class="info-tab-btn active" onclick="switchInfoTab('how-it-works', this)">🛡️ How It Works</button>
+          <button class="info-tab-btn" onclick="switchInfoTab('tech-specs', this)">📐 Technical Specs</button>
+          <button class="info-tab-btn" onclick="switchInfoTab('whats-included', this)">📦 Box Contents</button>
+          <button class="info-tab-btn" onclick="switchInfoTab('faqs', this)">❓ Tag FAQs</button>
+        </div>
+
+        <div class="info-tab-content-area">
+          <!-- Tab 1: How It Works -->
+          <div id="tab-how-it-works" class="info-tab-panel active">
+            <div class="how-it-works-steps-grid">
+              <div class="hw-step-box">
+                <div class="hw-step-num">01</div>
+                <h4>Peel & Stick in 30 Seconds</h4>
+                <p>Peel the 3M weather-resistant adhesive strip and apply the acrylic tag on the inside corner of your windshield or bike visor.</p>
+              </div>
+              <div class="hw-step-box">
+                <div class="hw-step-num">02</div>
+                <h4>Instant Cloud Activation</h4>
+                <p>Scan your unique registration QR with your own phone to link your vehicle number and mobile in under 60 seconds.</p>
+              </div>
+              <div class="hw-step-box">
+                <div class="hw-step-num">03</div>
+                <h4>100% Masked Relayed Calls</h4>
+                <p>Anyone scanning your tag connects via Sampark's virtual cloud PBX (+91 11-4084-XXXX). Your number is NEVER revealed!</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Technical Specs -->
+          <div id="tab-tech-specs" class="info-tab-panel">
+            <div class="tech-specs-table-box">
+              <table class="specs-full-table">
+                <tbody>
+                  <tr>
+                    <th>Tag Material</th>
+                    <td>UV-Treated Polycarbonate Acrylic with scratch-resistant top coat</td>
+                  </tr>
+                  <tr>
+                    <th>Dimensions</th>
+                    <td>85 mm x 54 mm (Standard ISO CR-80 credit card form factor)</td>
+                  </tr>
+                  <tr>
+                    <th>Adhesive Type</th>
+                    <td>Automotive-grade 3M VHB thermal adhesive (Leaves zero residue upon removal)</td>
+                  </tr>
+                  <tr>
+                    <th>Operating Temperature</th>
+                    <td>-10°C to +65°C (Engineered specifically for peak Delhi heatwaves & monsoons)</td>
+                  </tr>
+                  <tr>
+                    <th>QR Longevity</th>
+                    <td>Laser-etched high-density QR code rated for 5+ years without fading</td>
+                  </tr>
+                  <tr>
+                    <th>Scanner Requirement</th>
+                    <td>Zero App Needed! Scannable with native iOS Camera, Android Camera, Google Lens, or UPI apps</td>
+                  </tr>
+                  <tr>
+                    <th>Telephony Network</th>
+                    <td>Bank-grade encrypted dual-leg cloud telecom proxy with Delhi NCR routing</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Tab 3: Box Contents -->
+          <div id="tab-whats-included" class="info-tab-panel">
+            <div class="box-contents-grid">
+              <div class="content-item-card">
+                <span class="content-item-icon">🏷️</span>
+                <div>
+                  <strong>1x Sampark Smart QR Tag</strong>
+                  <p>Pre-printed with high-contrast durable automotive QR code</p>
+                </div>
+              </div>
+              <div class="content-item-card">
+                <span class="content-item-icon">🧽</span>
+                <div>
+                  <strong>1x Surface Prep Alcohol Wipe</strong>
+                  <p>Ensures glass windshield is oil-free for maximum 3M bonding</p>
+                </div>
+              </div>
+              <div class="content-item-card">
+                <span class="content-item-icon">📖</span>
+                <div>
+                  <strong>Quick Start Activation Guide</strong>
+                  <p>Simple 3-step pictorial instruction manual in English and Hindi</p>
+                </div>
+              </div>
+              <div class="content-item-card">
+                <span class="content-item-icon">🛡️</span>
+                <div>
+                  <strong>1 Year Replacement Warranty Card</strong>
+                  <p>Free tag replacement if peeled or damaged under normal usage</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 4: FAQs -->
+          <div id="tab-faqs" class="info-tab-panel">
+            <div class="tab-faq-list">
+              <div class="tab-faq-item">
+                <strong>Q: Can the person calling me see my true phone number?</strong>
+                <p>Never. Sampark's cloud proxy connects both phones via an encrypted virtual relay (+91 11-4084-XXXX). Neither party sees the other's real phone number.</p>
+              </div>
+              <div class="tab-faq-item">
+                <strong>Q: What happens if my vehicle is parked in a low network basement?</strong>
+                <p>Sampark simultaneously triggers an instant SMS and WhatsApp alert with the scanner's message so you are notified the moment your phone catches network.</p>
+              </div>
+              <div class="tab-faq-item">
+                <strong>Q: Is there any monthly fee or annual recharge?</strong>
+                <p>No. Your one-time purchase includes lifetime cloud QR redirection and unlimited masked phone call routing with no hidden charges.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Verified Customer Reviews Section (Dual-Direction Infinite Moving Marquee from Home) -->
+  <section class="marquee-reviews-section product-marquee-reviews" id="customer-reviews" style="padding: 60px 0;">
+    <div class="container">
+      <div class="section-header" style="max-width: 100% !important; margin: 0 0 24px 0 !important; text-align: left !important;">
+        <div class="section-tag" style="margin-left: 0 !important; display: inline-flex !important;">50,000+ Happy Drivers</div>
+        <h2 style="text-align: left !important; margin-left: 0 !important;">Delhi NCR Drivers Trust Sampark</h2>
+        <p style="text-align: left !important; margin-left: 0 !important;">Continuous feedback from verified vehicle owners across Delhi, Gurgaon, Noida, Faridabad, and Ghaziabad.</p>
+      </div>
+
+      <!-- Rating Summary Overview Card -->
+      <div class="rating-overview-card" style="margin-bottom: 30px;">
+        <div class="rating-score-box">
+          <div class="rating-big-num">4.9</div>
+          <div class="rating-big-stars">★★★★★</div>
+          <div class="rating-total-reviews">Based on 8,420+ Verified Purchases</div>
+        </div>
+
+        <div class="rating-bars-box">
+          <div class="rating-bar-row">
+            <span class="bar-star-label">5 Stars</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 92%;"></div></div>
+            <span class="bar-pct">92%</span>
+          </div>
+          <div class="rating-bar-row">
+            <span class="bar-star-label">4 Stars</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 6%;"></div></div>
+            <span class="bar-pct">6%</span>
+          </div>
+          <div class="rating-bar-row">
+            <span class="bar-star-label">3 Stars</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 1%;"></div></div>
+            <span class="bar-pct">1%</span>
+          </div>
+          <div class="rating-bar-row">
+            <span class="bar-star-label">2 Stars</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 0.5%;"></div></div>
+            <span class="bar-pct">&lt;1%</span>
+          </div>
+          <div class="rating-bar-row">
+            <span class="bar-star-label">1 Star</span>
+            <div class="bar-track"><div class="bar-fill" style="width: 0.5%;"></div></div>
+            <span class="bar-pct">&lt;1%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dual Infinite Moving Marquee from Home Page -->
+    <div class="marquee-container">
+
+      <!-- MARQUEE ROW 1: Auto-sliding continuously to the LEFT -->
+      <div class="marquee-row">
+        <div class="marquee-track marquee-left">
+
+          <!-- Card 1 -->
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "I used to write my number on paper in Lajpat Nagar market and got telemarketing calls constantly. With Sampark, strangers call me without ever seeing my number. Absolute game changer!"
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Aditya Verma</h5>
+                <p>Hyundai Creta • South Delhi</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "As a female doctor commuting to AIIMS, privacy is non-negotiable. Someone double parked needed me to move my car, scanned tag, and I got an instant masked call. Zero harassment."
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Dr. Pooja Malhotra</h5>
+                <p>Honda City • Gurugram CyberCity</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "We installed Sampark commercial tags on 24 delivery vans in Okhla. Drivers and fleet managers both receive alerts if vehicles need moving during tight warehouse unloads."
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Rajesh Khurana</h5>
+                <p>Logistics Head • Noida 62</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Fleet Tag</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "Got my bike helmet tag! When parked at Rajiv Chowk metro, someone knocked my bike stand. A stranger scanned the tag and I got an instant WhatsApp alert. Saved my bike!"
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Manish Chawla</h5>
+                <p>Royal Enfield • West Delhi</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Moto Tag</span>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "Parking in Hauz Khas Village on Saturday nights is crazy. Sampark let a valet reach me instantly to shift my car without ever knowing who I am. Total peace of mind!"
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Ananya Sen</h5>
+                <p>Kia Sonet • Vasant Kunj</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
+            </div>
+          </div>
+
+          <!-- DUPLICATE SET 1 FOR SEAMLESS INFINITE LOOP (ROW 1) -->
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "I used to write my number on paper in Lajpat Nagar market and got telemarketing calls constantly. With Sampark, strangers call me without ever seeing my number. Absolute game changer!"
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Aditya Verma</h5>
+                <p>Hyundai Creta • South Delhi</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
+            </div>
+          </div>
+
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "As a female doctor commuting to AIIMS, privacy is non-negotiable. Someone double parked needed me to move my car, scanned tag, and I got an instant masked call. Zero harassment."
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Dr. Pooja Malhotra</h5>
+                <p>Honda City • Gurugram CyberCity</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
+            </div>
+          </div>
+
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "We installed Sampark commercial tags on 24 delivery vans in Okhla. Drivers and fleet managers both receive alerts if vehicles need moving during tight warehouse unloads."
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Rajesh Khurana</h5>
+                <p>Logistics Head • Noida 62</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Fleet Tag</span>
+            </div>
+          </div>
+
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "Got my bike helmet tag! When parked at Rajiv Chowk metro, someone knocked my bike stand. A stranger scanned the tag and I got an instant WhatsApp alert. Saved my bike!"
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Manish Chawla</h5>
+                <p>Royal Enfield • West Delhi</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Moto Tag</span>
+            </div>
+          </div>
+
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "Parking in Hauz Khas Village on Saturday nights is crazy. Sampark let a valet reach me instantly to shift my car without ever knowing who I am. Total peace of mind!"
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Ananya Sen</h5>
+                <p>Kia Sonet • Vasant Kunj</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
             </div>
           </div>
 
         </div>
+      </div>
 
+      <!-- MARQUEE ROW 2: Auto-sliding continuously to the RIGHT (OPPOSITE DIRECTION) -->
+      <div class="marquee-row">
+        <div class="marquee-track marquee-right">
+
+          <!-- Card 6 -->
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "Parked at Connaught Place inner circle and accidentally left my headlights ON. A security guard scanned the tag and sent an alert. Saved my battery from dying!"
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Siddharth Aggarwal</h5>
+                <p>Kia Seltos • Central Delhi</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "Ordered immediately after watching the Shark Tank pitch. The acrylic tag build quality is superb. Sticks firmly inside the glass and withstands direct Delhi 48°C sun without peeling."
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Neha Bansal</h5>
+                <p>Tata Nexon EV • Ghaziabad</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "No app download needed for scanners! That is the best part. Anyone with an iPhone or Android camera scans it and connects instantly in 5 seconds."
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Vikram Rawat</h5>
+                <p>Maruti Brezza • Faridabad</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "The emergency family SOS feature gives huge peace of mind. Both my parents and my wife get notified immediately if any towing or collision happens."
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Karan Kapoor</h5>
+                <p>MG Hector • Greater Kailash</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
+            </div>
+          </div>
+
+          <!-- Card 10 -->
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "As a working woman driving alone across Delhi NCR, I hated leaving my number on my dashboard. Sampark is an absolute necessity for every driver in India."
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Simran Kaur</h5>
+                <p>Hyundai i20 • Rohini Sector 14</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
+            </div>
+          </div>
+
+          <!-- DUPLICATE SET 2 FOR SEAMLESS INFINITE LOOP (ROW 2) -->
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "Parked at Connaught Place inner circle and accidentally left my headlights ON. A security guard scanned the tag and sent an alert. Saved my battery from dying!"
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Siddharth Aggarwal</h5>
+                <p>Kia Seltos • Central Delhi</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
+            </div>
+          </div>
+
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "Ordered immediately after watching the Shark Tank pitch. The acrylic tag build quality is superb. Sticks firmly inside the glass and withstands direct Delhi 48°C sun without peeling."
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Neha Bansal</h5>
+                <p>Tata Nexon EV • Ghaziabad</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
+            </div>
+          </div>
+
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "No app download needed for scanners! That is the best part. Anyone with an iPhone or Android camera scans it and connects instantly in 5 seconds."
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Vikram Rawat</h5>
+                <p>Maruti Brezza • Faridabad</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
+            </div>
+          </div>
+
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "The emergency family SOS feature gives huge peace of mind. Both my parents and my wife get notified immediately if any towing or collision happens."
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Karan Kapoor</h5>
+                <p>MG Hector • Greater Kailash</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
+            </div>
+          </div>
+
+          <div class="marquee-card">
+            <div>
+              <div class="marquee-stars">★★★★★</div>
+              <p class="marquee-quote">
+                "As a working woman driving alone across Delhi NCR, I hated leaving my number on my dashboard. Sampark is an absolute necessity for every driver in India."
+              </p>
+            </div>
+            <div class="marquee-user">
+              <div>
+                <h5>Simran Kaur</h5>
+                <p>Hyundai i20 • Rohini Sector 14</p>
+              </div>
+              <span class="tag-badge-pill tag-badge-active">✓ Verified</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<!-- Related Products / Frequently Bought Together -->
+  <section class="related-products-section">
+    <div class="container">
+      <div class="section-header" style="max-width: 100% !important; margin: 0 0 24px 0 !important; text-align: left !important;">
+        <div class="section-tag">Explore More Tags</div>
+        <h2>Frequently Bought Together</h2>
+        <p>Complete privacy coverage for your other household vehicles and commercial fleets.</p>
+      </div>
+
+      <div class="related-products-grid">
+        <!-- Related 1: Pro Tag -->
+        <div class="related-prod-card">
+          <span class="related-badge">Dual QR Pro</span>
+          <a href="product-single.html?id=pro-tag" class="related-img-link">
+            <img src="assets/images/car-tag-hd.jpg" alt="Pro Windshield Acrylic Tag">
+          </a>
+          <div class="related-info">
+            <div class="related-rating">★★★★★ <span>(4.9)</span></div>
+            <h4 class="related-title">
+              <a href="product-single.html?id=pro-tag">Pro Windshield Tag (Dual QR)</a>
+            </h4>
+            <div class="related-price-row">
+              <span class="rel-price-now">₹249</span>
+              <span class="rel-price-old">₹599</span>
+            </div>
+            <a href="product-single.html?id=pro-tag" class="btn btn-outline btn-block btn-sm">View Tag Details</a>
+          </div>
+        </div>
+
+        <!-- Related 2: Bike Tag -->
+        <div class="related-prod-card">
+          <span class="related-badge">Helmet & Moto</span>
+          <a href="product-single.html?id=bike-tag" class="related-img-link">
+            <img src="assets/images/bike-tag-hd.jpg" alt="Moto & Helmet Emergency Tag">
+          </a>
+          <div class="related-info">
+            <div class="related-rating">★★★★★ <span>(4.9)</span></div>
+            <h4 class="related-title">
+              <a href="product-single.html?id=bike-tag">Moto & Helmet Emergency Tag</a>
+            </h4>
+            <div class="related-price-row">
+              <span class="rel-price-now">₹249</span>
+              <span class="rel-price-old">₹549</span>
+            </div>
+            <a href="product-single.html?id=bike-tag" class="btn btn-outline btn-block btn-sm">View Tag Details</a>
+          </div>
+        </div>
+
+        <!-- Related 3: Fleet Tag -->
+        <div class="related-prod-card">
+          <span class="related-badge">Fleet / Commercial</span>
+          <a href="product-single.html?id=fleet-tag" class="related-img-link">
+            <img src="assets/images/product-fleet.jpg" alt="Commercial Fleet Vehicle Tag">
+          </a>
+          <div class="related-info">
+            <div class="related-rating">★★★★★ <span>(4.8)</span></div>
+            <h4 class="related-title">
+              <a href="product-single.html?id=fleet-tag">Commercial & Fleet Vehicle Tag</a>
+            </h4>
+            <div class="related-price-row">
+              <span class="rel-price-now">₹299</span>
+              <span class="rel-price-old">₹699</span>
+            </div>
+            <a href="product-single.html?id=fleet-tag" class="btn btn-outline btn-block btn-sm">View Tag Details</a>
+          </div>
+        </div>
+
+        <!-- Related 4: Family Combo -->
+        <div class="related-prod-card">
+          <span class="related-badge" style="background:#FFCC00; color:#000;">Best Value</span>
+          <a href="product-single.html?id=combo-pack" class="related-img-link">
+            <img src="assets/images/ref-product-gallery.png" alt="Delhi Family Combo Pack">
+          </a>
+          <div class="related-info">
+            <div class="related-rating">★★★★★ <span>(5.0)</span></div>
+            <h4 class="related-title">
+              <a href="product-single.html?id=combo-pack">Delhi Family Combo (3 Tags)</a>
+            </h4>
+            <div class="related-price-row">
+              <span class="rel-price-now">₹449</span>
+              <span class="rel-price-old">₹1,199</span>
+            </div>
+            <a href="product-single.html?id=combo-pack" class="btn btn-outline btn-block btn-sm">View Tag Details</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -271,16 +1059,26 @@
     </div>
   </footer>
 
-    <!-- Fixed Floating Chat on WhatsApp Widget -->
-  <a href="https://wa.me/918447777266?text=Hello%20Sampark%20Delhi%2C%20I%20need%20help%20with%20my%20order"
+      <!-- Fixed Floating Chat on WhatsApp Widget (Pure Icon) -->
+  <a href="https://wa.me/918447777266?text=Hello%20Sampark%20Delhi%2C%20I%20have%20a%20question%20about%20smart%20vehicle%20tags."
      target="_blank" rel="noopener noreferrer" class="floating-whatsapp" id="floating-whatsapp-btn" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M12.04 2C6.516 2 2.028 6.488 2.028 12.012c0 1.954.56 3.784 1.536 5.334L2 22l4.81-1.523c1.488.887 3.226 1.385 5.23 1.385 5.524 0 10.012-4.488 10.012-10.012S17.564 2 12.04 2zm5.432 12.382c-.301-.15-1.78-.879-2.056-.98-.275-.1-.475-.15-.675.15-.199.3-.774.98-.949 1.18-.175.2-.349.225-.65.075-.301-.15-1.272-.469-2.423-1.496-.895-.798-1.5-1.784-1.675-2.084-.175-.3-.019-.462.131-.611.136-.134.301-.35.451-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.628-.925-2.228-.243-.585-.49-.505-.675-.515-.175-.01-.375-.01-.575-.01s-.525.075-.8.375c-.275.3-1.05 1.025-1.05 2.5s1.075 2.899 1.225 3.1c.15.2 2.115 3.23 5.124 4.53.716.31 1.275.495 1.71.634.719.229 1.373.197 1.89.12.576-.086 1.78-.727 2.03-1.428.25-.7.25-1.302.175-1.428-.075-.126-.275-.201-.576-.351z"/></svg>
-    <span class="whatsapp-text">Chat on WhatsApp</span>
     <span class="whatsapp-pulse"></span>
   </a>
 
   <div class="toast-container"></div>
   <script src="assets/js/main.js"></script>
+
+  <!-- Sticky Bottom Buy Bar on Mobile (Matching Image 2) -->
+  <div class="mobile-sticky-buy-bar" id="mobile-sticky-buy-bar">
+    <div class="buy-bar-price">
+      <div class="price-val" id="mobile-buy-bar-price">₹199</div>
+      <div class="price-sub">Cash on Delivery</div>
+    </div>
+    <button class="buy-bar-btn" id="mobile-sticky-buy-btn" type="button">
+      BUY NOW
+    </button>
+  </div>
 
   <script>
     function swapImage(src, el) {
@@ -302,6 +1100,22 @@
       }
     });
 
+    const checkPinBtn = document.getElementById('check-pincode-btn');
+    const pinInput = document.getElementById('pincode-input');
+    const pinResult = document.getElementById('pincode-result');
+    if (checkPinBtn && pinInput && pinResult) {
+      checkPinBtn.addEventListener('click', () => {
+        const pin = pinInput.value.trim();
+        if (!pin || pin.length < 6) {
+          pinResult.style.color = '#EF4444';
+          pinResult.textContent = '⚠️ Please enter a valid 6-digit Pincode';
+          return;
+        }
+        pinResult.style.color = '#059669';
+        pinResult.innerHTML = '⚡ <strong>Delivery Available:</strong> Guaranteed delivery in <strong>24–48 Hours</strong> (COD Available)';
+      });
+    }
+
     const urlParams = new URLSearchParams(window.location.search);
     const prodId = urlParams.get('id') || 'car-tag';
 
@@ -310,10 +1124,18 @@
       name: 'Sampark Smart Car Tag',
       price: 199,
       originalPrice: 499,
-      image: 'assets/images/product-car.jpg'
+      image: 'assets/images/car-tag-hd.jpg'
     };
 
-    if (prodId === 'fleet-tag') {
+    if (prodId === 'pro-tag') {
+      currentProd = {
+        id: 'pro-tag',
+        name: 'Sampark Pro Elite Metallic Tag (NFC + QR)',
+        price: 349,
+        originalPrice: 799,
+        image: 'assets/images/product-pro-tag.jpg'
+      };
+    } else if (prodId === 'fleet-tag') {
       currentProd = {
         id: 'fleet-tag',
         name: 'Commercial & Fleet Vehicle Tag',
@@ -321,21 +1143,41 @@
         originalPrice: 699,
         image: 'assets/images/product-fleet.jpg'
       };
-      document.getElementById('product-title-display').textContent = currentProd.name;
-      document.getElementById('breadcrumb-product-name').textContent = currentProd.name;
-      document.getElementById('gallery-main-img').src = currentProd.image;
     } else if (prodId === 'bike-tag') {
       currentProd = {
         id: 'bike-tag',
         name: 'Moto & Helmet Emergency Tag',
         price: 249,
         originalPrice: 549,
-        image: 'assets/images/product-bike.jpg'
+        image: 'assets/images/bike-tag-hd.jpg'
       };
-      document.getElementById('product-title-display').textContent = currentProd.name;
-      document.getElementById('breadcrumb-product-name').textContent = currentProd.name;
-      document.getElementById('gallery-main-img').src = currentProd.image;
+    } else if (prodId === 'combo-pack') {
+      currentProd = {
+        id: 'combo-pack',
+        name: 'Delhi Family Combo Pack (2 Cars + 1 Bike)',
+        price: 449,
+        originalPrice: 1199,
+        image: 'assets/images/ref-product-gallery.png'
+      };
+    } else if (prodId === 'society-tag') {
+      currentProd = {
+        id: 'society-tag',
+        name: 'Society & RWA Gate Privacy Tag',
+        price: 229,
+        originalPrice: 549,
+        image: 'assets/images/ref-car-pack-1.png'
+      };
     }
+
+    document.getElementById('product-title-display').textContent = currentProd.name;
+    document.getElementById('breadcrumb-product-name').textContent = currentProd.name;
+    document.getElementById('gallery-main-img').src = currentProd.image;
+    const priceDisplay = document.querySelector('.price-current');
+    if (priceDisplay) priceDisplay.textContent = '₹' + currentProd.price;
+    const mobilePriceEl = document.getElementById('mobile-buy-bar-price');
+    if (mobilePriceEl) mobilePriceEl.textContent = '₹' + currentProd.price;
+    const origDisplay = document.querySelector('.price-original');
+    if (origDisplay) origDisplay.textContent = '₹' + currentProd.originalPrice;
 
     document.getElementById('add-to-cart-page-btn').addEventListener('click', () => {
       const vPlate = document.getElementById('vehicle-plate-input').value.trim().toUpperCase() || 'STANDARD TAG';
@@ -353,8 +1195,117 @@
       }, singleQty, false);
       window.location.href = 'checkout.html';
     });
+
+    const mobileStickyBtn = document.getElementById('mobile-sticky-buy-btn');
+    if (mobileStickyBtn) {
+      mobileStickyBtn.addEventListener('click', () => {
+        const buyNowBtn = document.getElementById('buy-now-page-btn');
+        if (buyNowBtn) buyNowBtn.click();
+      });
+    }
+
+    function switchInfoTab(tabId, btn) {
+      document.querySelectorAll('.info-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.info-tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const target = document.getElementById('tab-' + tabId);
+      if (target) target.classList.add('active');
+    }
+
+    function openReviewModal() {
+      window.SamparkApp.showToastMessage('✍️ Review submission form opened! (Requires verified purchase login)');
+    }
+
+    // --- Interactive 9-Feature Cards Motion & Ripple System ---
+    const featureItems = document.querySelectorAll('.product-features-grid-card .feature-grid-item');
+    const featuresCard = document.querySelector('.product-features-grid-card');
+
+    const featureColorMap = {
+      'icon-blue': { color: 'rgba(37, 99, 235, 0.35)', desc: 'Calls routed privately with zero phone number exposure.' },
+      'icon-green': { color: 'rgba(37, 211, 102, 0.4)', desc: 'Instant WhatsApp parking and alert pings directly to your phone.' },
+      'icon-red': { color: 'rgba(225, 29, 72, 0.35)', desc: 'Downloadable backup printable PDF tag anytime from cloud.' },
+      'icon-purple': { color: 'rgba(147, 51, 234, 0.35)', desc: 'Encrypted one-way video streaming to inspect your vehicle surroundings.' },
+      'icon-teal': { color: 'rgba(13, 148, 136, 0.35)', desc: 'One-tap direct callback to scanner without revealing your SIM number.' },
+      'icon-green2': { color: 'rgba(22, 163, 74, 0.35)', desc: 'Live GPS geo-pinning of where your vehicle was last scanned.' },
+      'icon-orange': { color: 'rgba(234, 88, 12, 0.35)', desc: 'Fallback SMS alerts forwarded if internet connectivity is low.' },
+      'icon-red2': { color: 'rgba(225, 29, 72, 0.35)', desc: '24/7 dedicated Delhi NCR safety hotline assistance.' },
+      'icon-orange2': { color: 'rgba(202, 138, 4, 0.4)', desc: 'Urgent accident, fire or towing SOS notifications broadcast.' }
+    };
+
+    featureItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        // Remove active-clicked from all
+        featureItems.forEach(i => {
+          i.classList.remove('active-clicked');
+          i.classList.remove('is-selected');
+        });
+
+        // Add bounce & active selection
+        item.classList.add('active-clicked');
+        item.classList.add('is-selected');
+
+        // Detect icon color
+        const iconEl = item.querySelector('.feature-grid-icon');
+        let matchedColor = 'rgba(255, 204, 0, 0.35)';
+        let desc = 'Smart vehicle privacy feature enabled.';
+        if (iconEl) {
+          for (const [cls, info] of Object.entries(featureColorMap)) {
+            if (iconEl.classList.contains(cls)) {
+              matchedColor = info.color;
+              desc = info.desc;
+              break;
+            }
+          }
+        }
+
+        // Create radiating motion ripple from click position
+        const rect = item.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const ripple = document.createElement('span');
+        ripple.className = 'feature-motion-ripple';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.style.background = `radial-gradient(circle, ${matchedColor} 0%, transparent 70%)`;
+        item.appendChild(ripple);
+
+        setTimeout(() => {
+          ripple.remove();
+        }, 800);
+
+        // Update parent card ambient glow aura
+        if (featuresCard) {
+          featuresCard.classList.add('has-active-aura');
+          featuresCard.style.setProperty('--feature-ambient', matchedColor);
+          const cardRect = featuresCard.getBoundingClientRect();
+          const cardX = ((e.clientX - cardRect.left) / cardRect.width) * 100 + '%';
+          const cardY = ((e.clientY - cardRect.top) / cardRect.height) * 100 + '%';
+          featuresCard.style.setProperty('--mouse-x', cardX);
+          featuresCard.style.setProperty('--mouse-y', cardY);
+        }
+
+        // Show toast
+        const label = item.querySelector('.feature-grid-label') ? item.querySelector('.feature-grid-label').textContent.trim() : 'Feature';
+        if (window.SamparkApp && window.SamparkApp.showToastMessage) {
+          window.SamparkApp.showToastMessage(`✨ <strong>${label}:</strong> ${desc}`);
+        }
+      });
+    });
+
   </script>
   
+
+  <!-- Sticky Bottom Buy Bar on Mobile (Matching Image 2) -->
+  <div class="mobile-sticky-buy-bar">
+    <div class="buy-bar-price">
+      <div class="price-val" id="mobile-buy-bar-price">₹199</div>
+      <div class="price-sub">Cash on Delivery</div>
+    </div>
+    <button class="buy-bar-btn" id="mobile-sticky-buy-btn">
+      BUY NOW
+    </button>
+  </div>
 
 </body>
 </html>
